@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🔞 Clube das Famosinhas - Acesso Premium OnlyFans e Privacy 🔞</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Montserrat:wght@500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-pink: #ff0077; /* Rosa Vibrante Principal */
+      --dark-bg: #0a0005; /* Fundo bem escuro */
+      --text-light: #fefefe;
+
+      /* CORES FORTES E ORIGINAIS PARA PREÇOS E DESTAQUES */
+      --strong-red: #FF0000; /* Vermelho Original Forte */
+      --strong-green: #008000; /* Verde Original Forte */
+      --highlight-cta-hover: #00CC00; /* Um verde um pouco mais vibrante para o hover do botão, ainda forte */
+
+      --overlay-color: rgba(0, 0, 0, 0.85); /* Overlay bem opaco */
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--dark-bg); /* O background-color principal é definido aqui */
+      color: var(--text-light);
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      overflow-x: hidden;
+
+      /* CARREGA A IMAGEM DE FUNDO AQUI, APONTANDO PARA O ARQUIVO LOCAL */
+      background-image: url('fundo-clube.jpg'); /* Aponta para o arquivo na mesma pasta */
+      background-size: cover; /* Garante que a imagem cubra toda a área */
+      background-position: center; /* Centraliza a imagem */
+      background-attachment: fixed; /* Mantém a imagem fixa ao rolar */
+      /* SEM FILTER DE BRIGHTNESS OU BLUR AQUI, a imagem é nítida */
+    }
+
+    /* Overlay escuro (agora ele fará o escurecimento, a imagem será nítida) */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--overlay-color); /* Esta camada escura sobre a imagem */
+      z-index: -1;
+    }
+
+    /* Blocos de Conteúdo Principal */
+    .content-wrapper {
+      position: relative; /* Essencial para que o z-index funcione */
+      z-index: 1; /* Garante que o conteúdo fique visível */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex-grow: 1;
+      padding: 20px;
+      max-width: 900px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .main-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 4.8em;
+      color: var(--primary-pink);
+      text-shadow: 0 0 35px var(--primary-pink), 0 0 70px rgba(255, 0, 119, 0.9);
+      margin-bottom: 30px;
+      line-height: 1;
+      letter-spacing: -3px;
+    }
+
+    /* NOVO: Estilo para os Cards de Características */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* FORÇAR DUAS COLUNAS IGUAIS */
+      gap: 30px; /* Aumenta o espaçamento entre as colunas para mais respiro */
+      margin: 0 auto 40px; /* Margem abaixo do grid */
+      max-width: 800px; /* Largura máxima do grid */
+    }
+
+    .feature-card {
+      background: rgba(255, 255, 255, 0.08); /* Fundo sutil dos cards */
+      border-radius: 15px;
+      padding: 30px; /* Aumenta o padding interno para mais espaço */
+      box-shadow: 0 0 20px rgba(255, 0, 119, 0.2);
+      backdrop-filter: blur(8px); /* Blur para harmonizar com o fundo */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 180px; /* Aumenta a altura mínima para garantir proporção */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-8px); /* Efeito de elevação no hover */
+        box-shadow: 0 10px 30px rgba(255, 0, 119, 0.4);
+    }
+
+    .feature-card .icon {
+      font-size: 3em; /* Ícone maior para destaque */
+      margin-bottom: 15px; /* Mais espaço abaixo do ícone */
+      color: var(--primary-pink); /* Cor do ícone */
+      text-shadow: 0 0 10px rgba(255, 0, 119, 0.7);
+    }
+
+    .feature-card .text {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.15em; /* Texto um pouco maior */
+      color: var(--text-light);
+      font-weight: 500;
+      line-height: 1.4; /* Mais espaçamento entre as linhas */
+    }
+
+    .feature-card .text strong {
+      font-weight: 700;
+      color: var(--strong-green); /* Destaque em verde forte */
+    }
+
+
+    .cta-buttons-container {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      margin-top: 40px;
+      width: 100%;
+      align-items: center;
+    }
+
+    .cta-button {
+      background-color: var(--primary-pink);
+      color: var(--text-light);
+      padding: 28px 70px;
+      font-size: 2.5em;
+      font-weight: 900;
+      text-decoration: none;
+      border-radius: 80px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 30px var(--primary-pink), 0 0 60px rgba(255, 0, 119, 0.8);
+      border: none;
+      cursor: pointer;
+      min-width: 350px;
+    }
+
+    .cta-button:hover {
+      background-color: var(--highlight-cta-hover);
+      color: var(--dark-bg);
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 0 50px var(--highlight-cta-hover), 0 0 100px rgba(0, 204, 0, 1);
+    }
+
+    .cta-button .emoji-btn {
+      margin-right: 15px;
+      font-size: 1.1em;
+    }
+
+    .price-display-container {
+      margin-top: 40px;
+      background: rgba(0,0,0,0.6);
+      padding: 20px 30px;
+      border-radius: 15px;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 0 20px rgba(255, 0, 119, 0.3);
+      display: inline-block;
+    }
+
+    .price-display {
+      font-family: 'Oswald', sans-serif;
+      font-size: 2.5em;
+      color: var(--strong-green);
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .price-display .old-price {
+      font-size: 0.7em;
+      color: var(--strong-red);
+      text-decoration: line-through;
+      margin-right: 15px;
+      font-weight: 500;
+      vertical-align: middle;
+      display: inline-block;
+    }
+
+    .price-display .currency {
+        font-size: 0.7em;
+        vertical-align: super;
+        margin-right: 2px;
+    }
+
+    .price-display .value {
+        font-size: 1.2em;
+    }
+
+    .price-description {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.2em;
+        display: block;
+        margin-top: 10px;
+        color: var(--text-light);
+        opacity: 0.9;
+        font-weight: 500;
+        line-height: 1.3;
+    }
+
+    footer {
+      position: relative;
+      z-index: 1;
+      padding: 20px 20px;
+      font-size: 0.9em;
+      color: #aaa;
+      background: rgba(0, 0, 0, 0.7);
+      width: 100%;
+      text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    }
+
+    /* Media Queries para Responsividade */
+    @media (max-width: 768px) {
+      .main-title {
+        font-size: 3.5em;
+        letter-spacing: -1px;
+      }
+      .features-grid {
+          grid-template-columns: 1fr; /* 1 coluna em telas menores */
+          gap: 20px;
+      }
+      .feature-card {
+          min-height: 140px; /* Altura mínima ajustada para mobile */
+          padding: 20px;
+      }
+      .feature-card .icon {
+          font-size: 2.5em;
+          margin-bottom: 10px;
+      }
+      .feature-card .text {
+          font-size: 1.1em;
+      }
+      .cta-button {
+        font-size: 1.8em;
+        padding: 20px 45px;
+        min-width: 280px;
+      }
+      .price-display {
+        font-size: 2em;
+        padding: 15px 25px;
+      }
+      .price-display .old-price {
+          font-size: 0.6em;
+      }
+      .price-display .value {
+          font-size: 1.1em;
+      }
+      .price-description {
+          font-size: 1em;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .main-title {
+        font-size: 2.5em;
+        letter-spacing: -0.5px;
+      }
+      .features-grid {
+          gap: 15px;
+      }
+      .feature-card {
+          padding: 15px;
+          min-height: 120px;
+      }
+      .feature-card .icon {
+          font-size: 2.2em;
+      }
+      .feature-card .text {
+          font-size: 1em;
+      }
+      .cta-button {
+        font-size: 1.5em;
+        padding: 18px 35px;
+        min-width: unset;
+        width: 90%;
+      }
+      .price-display {
+        font-size: 1.8em;
+        padding: 12px 20px;
+      }
+      .price-description {
+          font-size: 0.9em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="overlay"></div> <div class="content-wrapper">
+    <h1 class="main-title">CLUBE DAS FAMOSINHAS</h1>
+    
+    <div class="features-grid">
+      <div class="feature-card">
+        <span class="icon">😈</span>
+        <p class="text">**+8.000 Vídeos Exclusivos:** Acervo irresistível.</p>
+      </div>
+      <div class="feature-card">
+        <span class="icon">🍑</span>
+        <p class="text">**Atualizações Semanais:** Conteúdo sempre fresco.</p>
+      </div>
+      <div class="feature-card">
+        <span class="icon">🤫</span>
+        <p class="text">**Acesso Privado:** Total discrição no Telegram.</p>
+      </div>
+      <div class="feature-card">
+        <span class="icon">✨</span>
+        <p class="text">**Qualidade Premium:** Conteúdo que você realmente deseja.</p>
+      </div>
+    </div>
+
+    <div class="cta-buttons-container">
+      <a href="https://t.me/Videopornhot_bot" target="_blank" class="cta-button">
+        <span class="emoji-btn">👉</span> ENTRAR NO GRUPO TELEGRAM
+      </a>
+    </div>
+
+    <div class="price-display-container">
+        <div class="price-display">
+            <span class="old-price">R$<span class="value">89,90</span></span>
+            <span class="currency">R$</span><span class="value">14,90</span>
+        </div>
+        <span class="description">Famosas do Only e "Laranjinha" por apenas</span>
+    </div>
+  </div>
+
+  <div class="footer-block">
+    ⚠️ Aviso: Grupo restrito e com vagas limitadas. Acesso sujeito a fechamento sem aviso prévio. Garanta sua entrada enquanto há tempo!
+  </div>
+
+</body>
+</html>
