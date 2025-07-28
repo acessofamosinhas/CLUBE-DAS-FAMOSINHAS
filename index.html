@@ -360,6 +360,16 @@ src="https://www.facebook.com/tr?id=4094913780782605&ev=PageView&noscript=1"
   <div class="footer-block">
     ⚠️ Aviso: Grupo restrito e com vagas limitadas. Acesso sujeito a fechamento sem aviso prévio. Garanta sua entrada enquanto há tempo!
   </div>
-
+<!-- Evento ViewContent no clique do botão -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const botaoTelegram = document.querySelector('a[href="https://t.me/Videopornhot_bot"]');
+    if (botaoTelegram) {
+      botaoTelegram.addEventListener("click", function () {
+        fbq('track', 'ViewContent');
+      });
+    }
+  });
+</script>
 </body>
 </html>
